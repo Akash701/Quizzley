@@ -9,15 +9,22 @@ class Character extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        SizedBox(
+          height: 10,
+        ),
         Image.asset(
           image,
+          height: 100,
         ),
         SizedBox(
           height: 15,
         ),
         Text(
           label,
-          // style: ,
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(
+          height: 10,
         ),
       ],
     );

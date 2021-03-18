@@ -16,13 +16,15 @@ class _HomeScreenState extends State<HomeScreen> {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
-            // alignment: Alignment.topCenter,
-            // width: 0.5,
-            child: Text('Questions',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.lightBlue,
-                )),
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.all(20),
+              child: Text('Questions',
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.lightBlue,
+                  )),
+            ),
             height: 300,
             decoration: BoxDecoration(
               color: Color(0xFF2A2B31),
@@ -32,7 +34,23 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
-          Text("Categories"),
+          SizedBox(
+            height: 30,
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 10),
+            child: Text(
+              "Categories",
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.black,
+                fontWeight: FontWeight.w600,
+              ),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -49,7 +67,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       colour: Colors.white,
                       cardchild: Character(
                         image: ('images/Science.png'),
-                        label: ('MALE'),
+                        label: ('Science'),
                       ),
                     ),
                   ),
@@ -63,23 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       colour: Colors.white,
                       cardchild: Character(
-                        image: ("images/Science.png"),
-                        label: ('MALE'),
-                      ),
-                    ),
-                  ),
-                  // SizedBox(
-                  //   width: 10,
-                  // ),
-                  Expanded(
-                    child: Category(
-                      onPress: () {
-                        setState(() {});
-                      },
-                      colour: Colors.white,
-                      cardchild: Character(
-                        image: ("images/Science.png"),
-                        label: ('MALE'),
+                        image: ("images/Maths.png"),
+                        label: ('Mathematics'),
                       ),
                     ),
                   ),
@@ -100,8 +103,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       colour: Colors.white,
                       cardchild: Character(
-                        image: ("images/Science.png"),
-                        label: ('MALE'),
+                        image: ("images/World.png"),
+                        label: ('World'),
                       ),
                     ),
                   ),
@@ -115,23 +118,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       },
                       colour: Colors.white,
                       cardchild: Character(
-                        image: ("images/Maths.png"),
-                        label: ('MALE'),
-                      ),
-                    ),
-                  ),
-                  // SizedBox(
-                  //   width: 10,
-                  // ),
-                  Expanded(
-                    child: Category(
-                      onPress: () {
-                        setState(() {});
-                      },
-                      colour: Colors.white,
-                      cardchild: Character(
-                        image: ("images/Science.png"),
-                        label: ('MALE'),
+                        image: ("images/Language.png"),
+                        label: ('Language'),
                       ),
                     ),
                   ),
