@@ -19,10 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               alignment: Alignment.bottomLeft,
               margin: EdgeInsets.all(20),
-              child: Text('Questions',
+              child: Text('Fema',
                   style: TextStyle(
                     fontSize: 50,
-                    color: Colors.lightBlue,
+                    color: Colors.white60,
+                    fontWeight: FontWeight.w600,
                   )),
             ),
             height: 300,
@@ -63,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     child: Category(
                       onPress: () {
                         setState(() {
-                          Navigator.pushNamed(context, routeName)
+                          Navigator.pushNamed(context, 'science');
                         });
                       },
                       colour: Colors.white,
