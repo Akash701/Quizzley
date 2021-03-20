@@ -15,7 +15,7 @@ class QuestionCard extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            sample_data[0]['question'],
+            question.question,
             style: TextStyle(
               fontSize: 25,
             ),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qna_app/Science_Folder/QuestionCard.dart';
+import 'package:qna_app/Question_Controller.dart';
+import 'package:get/get.dart';
 
 class Science extends StatefulWidget {
   @override
@@ -10,6 +12,7 @@ class Science extends StatefulWidget {
 class _ScienceState extends State<Science> {
   @override
   Widget build(BuildContext context) {
+    QuestionController _questionController = Get.put(QuestionController());
     return SafeArea(
       child: Scaffold(
         body: Container(
@@ -43,7 +46,84 @@ class _ScienceState extends State<Science> {
               SizedBox(
                 height: 40,
               ),
-              QuestionCard(),
+              Expanded(
+                child: PageView.builder(
+                  itemCount: _questionController.questions.length,
+                  itemBuilder: (context, index) => QuestionCard(
+                      question: _questionController.questions[index]),
+                ),
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.redAccent,
+                    ),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Row(
+                        children: [
+                          Icon(
+                            Icons.power_settings_new,
+                            color: Colors.black,
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Text(
+                            "Quit",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.all(10),
+                    margin: EdgeInsets.only(right: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.greenAccent,
+                    ),
+                    child: TextButton(
+                      onPressed: () {},
+                      child: Row(
+                        children: [
+                          Text(
+                            "Next",
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios_rounded,
+                            color: Colors.black,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 100,
+              ),
             ],
           ),
         ),
