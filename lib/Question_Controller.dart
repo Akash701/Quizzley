@@ -16,6 +16,9 @@ class QuestionController extends GetxController
 
   List<Question> get questions => this._questions;
 
+  PageController _pageController;
+  PageController get pageController => this._pageController;
+
   bool _isAnswered = false;
 
   bool get isAnswered => this._isAnswered;
@@ -44,9 +47,16 @@ class QuestionController extends GetxController
     _selectedAns = selectedIndex;
 
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
+  }
 
-    Future.delayed(Duration(seconds: 3), () {
-      // nextQuestion();
-    });
+  void nextQuestion() {
+    if (_questionNumber.value != _questions.length) {
+      _isAnswered = false;
+      _pageController.nextPage(
+          duration: Duration(
+            milliseconds: 0,
+          ),
+          curve: Curves.ease);
+    }
   }
 }

@@ -10,6 +10,7 @@ class Science extends StatefulWidget {
 }
 
 class _ScienceState extends State<Science> {
+  QuestionController questionController = QuestionController();
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
@@ -48,6 +49,8 @@ class _ScienceState extends State<Science> {
               ),
               Expanded(
                 child: PageView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  controller: _questionController.pageController,
                   itemCount: _questionController.questions.length,
                   itemBuilder: (context, index) => QuestionCard(
                       question: _questionController.questions[index]),
@@ -98,7 +101,9 @@ class _ScienceState extends State<Science> {
                       color: Colors.greenAccent,
                     ),
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        questionController.nextQuestion();
+                      },
                       child: Row(
                         children: [
                           Text(
