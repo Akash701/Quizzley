@@ -122,7 +122,7 @@ class _ScienceState extends State<Science> {
                 ],
               ),
               SizedBox(
-                height: 100,
+                height: 60,
               ),
             ],
           ),
