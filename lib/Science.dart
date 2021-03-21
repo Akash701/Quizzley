@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:qna_app/Science_Folder/Options.dart';
 import 'package:qna_app/Science_Folder/QuestionCard.dart';
 import 'package:qna_app/Question_Controller.dart';
 import 'package:get/get.dart';
-import 'package:qna_app/constants.dart';
 
 class Science extends StatefulWidget {
   @override
@@ -12,6 +12,7 @@ class Science extends StatefulWidget {
 
 class _ScienceState extends State<Science> {
   QuestionController questionController = QuestionController();
+  Option option = Option();
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:qna_app/Science_Folder/Sciece_Questions.dart';
 import 'package:get/get.dart';
+import 'package:qna_app/Score.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
+  int score = 0;
   // Lets animated our progress bar
 
   AnimationController _animationController;
@@ -69,7 +71,7 @@ class QuestionController extends GetxController
     _pageController.dispose();
   }
 
-  void checkAns(Question question, int selectedIndex) {
+  int checkAns(Question question, int selectedIndex) {
     // because once user press any option then it will run
     _isAnswered = true;
     _correctAns = question.answer;
@@ -85,6 +87,10 @@ class QuestionController extends GetxController
     // Future.delayed(Duration(seconds: 3), () {
     //   nextQuestion();
     // });
+    if (_correctAns == _selectedAns) {
+      score++;
+    }
+    return score;
   }
 
   void nextQuestion() {
@@ -100,14 +106,19 @@ class QuestionController extends GetxController
       // Then start it again
       // Once timer is finish go to the next qn
       _animationController.forward().whenComplete(nextQuestion);
+    } else {
+      // Get package provide us simple way to naviigate another page
+      Get.to(Score());
     }
-    // else {
-    //   // Get package provide us simple way to naviigate another page
-    //   Get.to(ScoreScreen());
-    // }
   }
 
   void updateTheQnNum(int index) {
     _questionNumber.value = index + 1;
   }
+
+  void scoreReset() {
+    score = 0;
+  }
+
+  void quizreset() {}
 }
