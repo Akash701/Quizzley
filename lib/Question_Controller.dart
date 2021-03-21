@@ -82,9 +82,9 @@ class QuestionController extends GetxController
     update();
 
     // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 3), () {
-      nextQuestion();
-    });
+    // Future.delayed(Duration(seconds: 3), () {
+    //   nextQuestion();
+    // });
   }
 
   void nextQuestion() {

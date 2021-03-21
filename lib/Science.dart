@@ -75,6 +75,7 @@ class _ScienceState extends State<Science> {
                     ),
                     child: TextButton(
                       onPressed: () {
+                        _questionController.questionNumber.value = 1;
                         Navigator.pop(context);
                       },
                       child: Row(
@@ -105,9 +106,7 @@ class _ScienceState extends State<Science> {
                       color: Colors.greenAccent,
                     ),
                     child: TextButton(
-                      onPressed: () {
-                        questionController.nextQuestion();
-                      },
+                      onPressed: _questionController.nextQuestion,
                       child: Row(
                         children: [
                           Text(
