@@ -82,16 +82,17 @@ class QuestionController extends GetxController
     update();
 
     // Once user select an ans after 3s it will go to the next qn
-    // Future.delayed(Duration(seconds: 0), () {
-    //   nextQuestion();
-    // });
+    Future.delayed(Duration(seconds: 3), () {
+      nextQuestion();
+    });
   }
 
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
-          duration: Duration(seconds: 0), curve: Curves.ease);
+          duration: Duration(milliseconds: 250),
+          curve: Curves.ease); //Changing time of the container
 
       // Reset the counter
       _animationController.reset();

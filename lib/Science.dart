@@ -34,10 +34,12 @@ class _ScienceState extends State<Science> {
               SizedBox(
                 height: 10,
               ),
-              Text(
-                'Question 1/10',
-                style: TextStyle(
-                  fontSize: 30,
+              Obx(
+                () => Text(
+                  'Question ${_questionController.questionNumber.value}/10',
+                  style: TextStyle(
+                    fontSize: 30,
+                  ),
                 ),
               ),
               Row(
@@ -52,6 +54,7 @@ class _ScienceState extends State<Science> {
                 child: PageView.builder(
                   physics: NeverScrollableScrollPhysics(),
                   controller: _questionController.pageController,
+                  onPageChanged: _questionController.updateTheQnNum,
                   itemCount: _questionController.questions.length,
                   itemBuilder: (context, index) => QuestionCard(
                       question: _questionController.questions[index]),
