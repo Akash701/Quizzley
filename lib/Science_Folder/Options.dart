@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Question_Controller.dart';
+import 'package:qna_app/constants.dart';
 
 class Option extends StatelessWidget {
   const Option({
@@ -12,6 +13,7 @@ class Option extends StatelessWidget {
   final String text;
   final int index;
   final VoidCallback press;
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<QuestionController>(
@@ -20,17 +22,17 @@ class Option extends StatelessWidget {
           Color getTheRightColor() {
             if (qnController.isAnswered) {
               if (index == qnController.correctAns) {
-                return Colors.green;
+                return kGreenColor;
               } else if (index == qnController.selectedAns &&
                   qnController.selectedAns != qnController.correctAns) {
-                return Colors.red;
+                return kRedColor;
               }
             }
-            return Colors.grey;
+            return kGrayColor;
           }
 
           IconData getTheRightIcon() {
-            return getTheRightColor() == Colors.red ? Icons.close : Icons.done;
+            return getTheRightColor() == kRedColor ? Icons.close : Icons.done;
           }
 
           return InkWell(
@@ -58,7 +60,7 @@ class Option extends StatelessWidget {
                     height: 26,
                     width: 26,
                     decoration: BoxDecoration(
-                      color: getTheRightColor() == Colors.grey
+                      color: getTheRightColor() == kGrayColor
                           ? Colors.transparent
                           : getTheRightColor(),
                       borderRadius: BorderRadius.circular(50),
@@ -66,7 +68,7 @@ class Option extends StatelessWidget {
                         color: getTheRightColor(),
                       ),
                     ),
-                    child: getTheRightColor() == Colors.grey
+                    child: getTheRightColor() == kGrayColor
                         ? null
                         : Icon(getTheRightIcon(), size: 16),
                   ),

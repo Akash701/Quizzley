@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:qna_app/Science_Folder/QuestionCard.dart';
 import 'package:qna_app/Question_Controller.dart';
 import 'package:get/get.dart';
+import 'package:qna_app/constants.dart';
 
 class Science extends StatefulWidget {
   @override
