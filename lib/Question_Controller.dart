@@ -5,8 +5,8 @@ import 'package:qna_app/Score.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
-  List<Icon> scoreKeeper = [];
   int score = 0;
+  List<Icon> scoreKeeper = [];
   // Lets animated our progress bar
 
   AnimationController _animationController;
@@ -89,6 +89,19 @@ class QuestionController extends GetxController
     // });
     if (_correctAns == _selectedAns) {
       score++;
+    }
+    if (_correctAns == _selectedAns) {
+      scoreKeeper.add(Icon(
+        Icons.minimize_rounded,
+        color: Colors.green,
+        size: 20,
+      ));
+    } else {
+      scoreKeeper.add(Icon(
+        Icons.minimize_rounded,
+        color: Colors.red,
+        size: 20,
+      ));
     }
     return score;
   }

@@ -15,19 +15,27 @@ class _ScoreState extends State<Score> {
     QuestionController _qnController = Get.put(QuestionController());
     // Option option = Get.put(Option());
     return Scaffold(
-      body: SafeArea(
-          child: Column(
+      backgroundColor: Color(0xFFD3D9DB),
+      body: Column(
         children: [
-          SizedBox(
-            height: 30,
-          ),
-          Center(
-            child: Text(
-              'Quiz Result',
-              style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white),
+          Container(
+            child: Container(
+              alignment: Alignment.bottomLeft,
+              margin: EdgeInsets.all(20),
+              child: Text('Quiz Result',
+                  style: TextStyle(
+                    fontSize: 50,
+                    color: Colors.white60,
+                    fontWeight: FontWeight.w600,
+                  )),
+            ),
+            height: 250,
+            decoration: BoxDecoration(
+              color: Color(0xFF2A2B31),
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(25),
+                bottomLeft: Radius.circular(25),
+              ),
             ),
           ),
           SizedBox(
@@ -44,6 +52,7 @@ class _ScoreState extends State<Score> {
             style: TextStyle(
               fontSize: 40,
               fontWeight: FontWeight.bold,
+              color: Colors.black54,
             ),
           ),
           SizedBox(
@@ -55,12 +64,12 @@ class _ScoreState extends State<Score> {
             color: Colors.transparent,
             child: Container(
                 decoration: BoxDecoration(
-                    color: Colors.purple,
+                    color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 child: new Center(
                   child: new Text(
                     '${_qnController.score}',
-                    style: TextStyle(color: Colors.white, fontSize: 50),
+                    style: TextStyle(color: Colors.redAccent, fontSize: 50),
                     textAlign: TextAlign.center,
                   ),
                 )),
@@ -68,26 +77,32 @@ class _ScoreState extends State<Score> {
           SizedBox(
             height: 60,
           ),
-          FlatButton(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30.0)),
-            color: Colors.lightBlue,
-            onPressed: () {
-              setState(() {
-                _qnController.quizreset();
-                Navigator.pop(context);
-                Navigator.pop(context);
-              });
-            },
-            child: Text(
-              'Take New Quiz',
-              style: TextStyle(
-                fontSize: 25,
+          Container(
+            padding: EdgeInsets.all(10),
+            margin: EdgeInsets.only(right: 10),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+              color: Colors.blueAccent,
+            ),
+            child: TextButton(
+              onPressed: () {
+                setState(() {
+                  _qnController.quizreset();
+                  Navigator.pop(context);
+                  Navigator.pop(context);
+                });
+              },
+              child: Text(
+                'Take New Quiz',
+                style: TextStyle(
+                  fontSize: 25,
+                  color: Colors.white,
+                ),
               ),
             ),
           ),
         ],
-      )),
+      ),
     );
   }
 }
