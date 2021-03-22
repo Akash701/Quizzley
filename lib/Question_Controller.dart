@@ -5,6 +5,7 @@ import 'package:qna_app/Score.dart';
 
 class QuestionController extends GetxController
     with SingleGetTickerProviderMixin {
+  List<Icon> scoreKeeper = [];
   int score = 0;
   // Lets animated our progress bar
 

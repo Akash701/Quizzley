@@ -11,8 +11,28 @@ class Science extends StatefulWidget {
 }
 
 class _ScienceState extends State<Science> {
+  List<Icon> scoreKeeper = [];
+  int score = 0;
   QuestionController questionController = QuestionController();
   Option option = Option();
+  void icon() {
+    setState(() {
+      if (questionController.correctAns == questionController.selectedAns) {
+        scoreKeeper.add(Icon(
+          Icons.minimize_rounded,
+          color: Colors.green,
+          size: 20,
+        ));
+      } else {
+        scoreKeeper.add(Icon(
+          Icons.minimize_rounded,
+          color: Colors.red,
+          size: 20,
+        ));
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     QuestionController _questionController = Get.put(QuestionController());
@@ -44,9 +64,7 @@ class _ScienceState extends State<Science> {
                 ),
               ),
               Row(
-                children: [
-                  Icon(Icons.minimize_rounded),
-                ],
+                children: scoreKeeper,
               ),
               SizedBox(
                 height: 40,

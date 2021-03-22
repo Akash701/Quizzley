@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:qna_app/Home.dart';
 import 'package:qna_app/Science.dart';
 import 'package:get/get.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
 
 void main() {
   runApp(

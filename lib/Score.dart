@@ -74,7 +74,6 @@ class _ScoreState extends State<Score> {
             color: Colors.lightBlue,
             onPressed: () {
               setState(() {
-                // _qnController.scoreReset();
                 _qnController.quizreset();
                 Navigator.pop(context);
                 Navigator.pop(context);
