@@ -3,6 +3,7 @@ import 'package:qna_app/Home.dart';
 import 'package:qna_app/Science_Folder/Science.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Mathematics/Mathematics.dart';
+import 'package:qna_app/World/World.dart';
 
 void main() {
   runApp(
@@ -21,7 +22,8 @@ class MyApp extends StatelessWidget {
       routes: {
         'home': (context) => HomeScreen(),
         'science': (context) => Science(),
-        'maths': (context) => Maths()
+        'maths': (context) => Maths(),
+        'world': (context) => World(),
       },
     );
   }

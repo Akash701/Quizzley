@@ -68,7 +68,7 @@ class _ScoreState extends State<Score> {
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
                 child: new Center(
                   child: new Text(
-                    '${_qnController.score}',
+                    '${_qnController.score}/10',
                     style: TextStyle(color: Colors.redAccent, fontSize: 50),
                     textAlign: TextAlign.center,
                   ),
