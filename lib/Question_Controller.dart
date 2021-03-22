@@ -67,7 +67,6 @@ class QuestionController extends GetxController
   @override
   void onClose() {
     super.onClose();
-    _animationController.dispose();
     _pageController.dispose();
   }
 
@@ -120,5 +119,9 @@ class QuestionController extends GetxController
     score = 0;
   }
 
-  void quizreset() {}
+  void quizreset() {
+    _isAnswered = false;
+    score = 0;
+    questionNumber.value = 1;
+  }
 }

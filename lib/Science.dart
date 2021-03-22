@@ -76,7 +76,7 @@ class _ScienceState extends State<Science> {
                     ),
                     child: TextButton(
                       onPressed: () {
-                        _questionController.questionNumber.value = 1;
+                        _questionController.quizreset();
                         Navigator.pop(context);
                       },
                       child: Row(

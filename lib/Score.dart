@@ -13,7 +13,7 @@ class _ScoreState extends State<Score> {
   @override
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
-    Option option = Get.put(Option());
+    // Option option = Get.put(Option());
     return Scaffold(
       body: SafeArea(
           child: Column(
@@ -74,9 +74,8 @@ class _ScoreState extends State<Score> {
             color: Colors.lightBlue,
             onPressed: () {
               setState(() {
-                _qnController.scoreReset();
+                // _qnController.scoreReset();
                 _qnController.quizreset();
-                _qnController.questionNumber.value = 1;
                 Navigator.pop(context);
                 Navigator.pop(context);
               });
