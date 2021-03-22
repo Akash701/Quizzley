@@ -44,6 +44,15 @@ class QuestionController extends GetxController
   ).toList();
   List<Question> get worldQuestions => this._worldQuestion;
 
+  List<Question> _languageQuestion = Language_data.map(
+    (question) => Question(
+        id: question['id'],
+        question: question['question'],
+        options: question['options'],
+        answer: question['answer_index']),
+  ).toList();
+  List<Question> get languageQuestions => this._languageQuestion;
+
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
 

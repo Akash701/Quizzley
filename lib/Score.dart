@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Question_Controller.dart';
-import 'package:qna_app/Options.dart';
-import 'package:qna_app/QuestionCard.dart';
 
 class Score extends StatefulWidget {
   @override

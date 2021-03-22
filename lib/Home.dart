@@ -121,7 +121,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   Expanded(
                     child: Category(
                       onPress: () {
-                        setState(() {});
+                        setState(() {
+                          Navigator.pushNamed(context, 'language');
+                        });
                       },
                       colour: Colors.white,
                       cardchild: Character(

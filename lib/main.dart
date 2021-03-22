@@ -4,6 +4,7 @@ import 'package:qna_app/Science_Folder/Science.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Mathematics/Mathematics.dart';
 import 'package:qna_app/World/World.dart';
+import 'package:qna_app/Language/Language.dart';
 
 void main() {
   runApp(
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
         'science': (context) => Science(),
         'maths': (context) => Maths(),
         'world': (context) => World(),
+        'language': (context) => Language(),
       },
     );
   }
