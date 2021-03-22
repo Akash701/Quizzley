@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qna_app/Science_Folder/Sciece_Questions.dart';
-import 'package:qna_app/Science_Folder/Options.dart';
+import 'package:qna_app/AllQuestions.dart';
+import 'package:qna_app/Options.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Question_Controller.dart';
 

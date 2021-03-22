@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:qna_app/Options.dart';
 import 'package:qna_app/QuestionCard.dart';
@@ -7,12 +6,12 @@ import 'package:get/get.dart';
 
 QuestionController questionController = QuestionController();
 
-class Science extends StatefulWidget {
+class Maths extends StatefulWidget {
   @override
-  _ScienceState createState() => _ScienceState();
+  _MathsState createState() => _MathsState();
 }
 
-class _ScienceState extends State<Science> {
+class _MathsState extends State<Maths> {
   int score = 0;
   Option option = Option();
   // List<Icon> scoreKeeper = [];
@@ -32,7 +31,7 @@ class _ScienceState extends State<Science> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Science',
+                  Text('Maths',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black54,
@@ -77,9 +76,9 @@ class _ScienceState extends State<Science> {
               physics: NeverScrollableScrollPhysics(),
               controller: _questionController.pageController,
               onPageChanged: _questionController.updateTheQnNum,
-              itemCount: _questionController.scienceQuestions.length,
+              itemCount: _questionController.mathsQuestions.length,
               itemBuilder: (context, index) => QuestionCard(
-                  question: _questionController.scienceQuestions[index]),
+                  question: _questionController.mathsQuestions[index]),
             ),
           ),
           SizedBox(

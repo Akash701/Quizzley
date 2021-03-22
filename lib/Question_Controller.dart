@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qna_app/Science_Folder/Sciece_Questions.dart';
+import 'package:qna_app/AllQuestions.dart';
 import 'package:get/get.dart';
 import 'package:qna_app/Score.dart';
 
@@ -17,16 +17,23 @@ class QuestionController extends GetxController
   PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question> _questions = sample_data
-      .map(
-        (question) => Question(
-            id: question['id'],
-            question: question['question'],
-            options: question['options'],
-            answer: question['answer_index']),
-      )
-      .toList();
-  List<Question> get questions => this._questions;
+  List<Question> _scienceQuestion = Science_data.map(
+    (question) => Question(
+        id: question['id'],
+        question: question['question'],
+        options: question['options'],
+        answer: question['answer_index']),
+  ).toList();
+  List<Question> get scienceQuestions => this._scienceQuestion;
+
+  List<Question> _mathsQuestion = Maths_data.map(
+    (question) => Question(
+        id: question['id'],
+        question: question['question'],
+        options: question['options'],
+        answer: question['answer_index']),
+  ).toList();
+  List<Question> get mathsQuestions => this._mathsQuestion;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
@@ -107,7 +114,7 @@ class QuestionController extends GetxController
   }
 
   void nextQuestion() {
-    if (_questionNumber.value != _questions.length) {
+    if (_questionNumber.value != _scienceQuestion.length) {
       _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250),

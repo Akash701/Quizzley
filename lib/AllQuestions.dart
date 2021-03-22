@@ -6,7 +6,7 @@ class Question {
   Question({this.id, this.question, this.answer, this.options});
 }
 
-const List sample_data = [
+const List Science_data = [
   {
     "id": 1,
     "question": "Who is the Father of Science.",
@@ -76,5 +76,68 @@ const List sample_data = [
     "question": "What is a U-boat ?",
     "options": ['Ship', 'Submarine', 'Helicopter', 'Balloon'],
     "answer_index": 2,
+  },
+];
+
+const List Maths_data = [
+  {
+    "id": 1,
+    "question": "Who is the Father of Mathematics.",
+    "options": ['Aristotle', 'Archimedes', 'Bhrama gupta', 'Charles babage'],
+    "answer_index": 2,
+  },
+  {
+    "id": 2,
+    "question": "Who is the Father of Indian Mathematics ?",
+    "options": ['Bhrama gupta', 'Chanakya', 'Aristotle', 'Srinivasa Ramanuja'],
+    "answer_index": 4,
+  },
+  {
+    "id": 3,
+    "question": "Which Country Invented Maths",
+    "options": ['India', ' Greece', 'Egypt', 'Iraq'],
+    "answer_index": 2,
+  },
+  {
+    "id": 4,
+    "question": "Who is the Mother of Maths ?",
+    "options": ['Hypatia', 'Emmy Noether', 'Mary Casturigh', 'Ada Loveiance'],
+    "answer_index": 1,
+  },
+  {
+    "id": 5,
+    "question": "Who found Zero ?",
+    "options": ['Mayans', 'Egyptian', 'Greece', 'Israil'],
+    "answer_index": 1,
+  },
+  {
+    "id": 6,
+    "question": "Who is the god of Maths ?",
+    "options": ['Athena', 'Aphrodite', 'Venus', 'Suize'],
+    "answer_index": 1,
+  },
+  {
+    "id": 7,
+    "question": "Who is the Father of modern Mathematics ?",
+    "options": ['Rene Descates', 'hypatia', 'Arya bhatta', 'Bhramagupta'],
+    "answer_index": 1,
+  },
+  {
+    "id": 8,
+    "question": "Who is the King of Mathematics in India",
+    "options": ['AryaBhatta', 'Bhaskasacharya', 'Charaka', 'Bharamagupta'],
+    "answer_index": 4,
+  },
+  {
+    "id": 9,
+    "question": "Who is the  Father of Geometry",
+    "options": ['Euclid', 'Aristtle', 'Pythagoras', 'Archemides'],
+    "answer_index": 1,
+  },
+  {
+    "id": 10,
+    "question": "Father of Arithmetic ?",
+    "options": ['Carl Friedrich Gauss', 'Aristotle', 'Brahma gupta', 'Euclid'],
+    "answer_index": 3,
   },
 ];
