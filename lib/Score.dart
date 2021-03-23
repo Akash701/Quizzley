@@ -8,9 +8,41 @@ class Score extends StatefulWidget {
 }
 
 class _ScoreState extends State<Score> {
+  QuestionController _qnController = Get.put(QuestionController());
+  Widget result() {
+    if (_qnController.score >= 7) {
+      return Image.asset(
+        'images/first.png',
+        height: 100,
+        width: 100,
+      );
+    } else if (_qnController.score >= 5 && _qnController.score < 7) {
+      return Image.asset(
+        'images/second.png',
+        height: 100,
+        width: 100,
+      );
+    } else {
+      return Image.asset(
+        'images/third.png',
+        height: 150,
+        width: 150,
+      );
+    }
+  }
+
+  Color scoreColor() {
+    if (_qnController.score >= 7) {
+      return Colors.green;
+    } else if (_qnController.score >= 5 && _qnController.score < 7) {
+      return Colors.yellow;
+    } else {
+      return Colors.redAccent;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    QuestionController _qnController = Get.put(QuestionController());
     // Option option = Get.put(Option());
     return Scaffold(
       backgroundColor: Color(0xFFD3D9DB),
@@ -27,7 +59,7 @@ class _ScoreState extends State<Score> {
                     fontWeight: FontWeight.w600,
                   )),
             ),
-            height: 250,
+            height: 200,
             decoration: BoxDecoration(
               color: Color(0xFF2A2B31),
               borderRadius: BorderRadius.only(
@@ -40,15 +72,15 @@ class _ScoreState extends State<Score> {
             height: 50,
           ),
           Center(
-              // child: result(),
-              ),
+            child: result(),
+          ),
           SizedBox(
-            height: 70,
+            height: 30,
           ),
           Text(
             'Your Score',
             style: TextStyle(
-              fontSize: 40,
+              fontSize: 30,
               fontWeight: FontWeight.bold,
               color: Colors.black54,
             ),
@@ -67,13 +99,13 @@ class _ScoreState extends State<Score> {
                 child: new Center(
                   child: new Text(
                     '${_qnController.score}/10',
-                    style: TextStyle(color: Colors.redAccent, fontSize: 50),
+                    style: TextStyle(color: scoreColor(), fontSize: 50),
                     textAlign: TextAlign.center,
                   ),
                 )),
           ),
           SizedBox(
-            height: 60,
+            height: 40,
           ),
           Container(
             padding: EdgeInsets.all(10),
