@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
             child: Container(
               alignment: Alignment.bottomLeft,
               margin: EdgeInsets.all(20),
-              child: Text('Fema',
+              child: Text('Quizzley',
                   style: TextStyle(
                     fontSize: 50,
                     color: Colors.white60,

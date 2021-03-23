@@ -96,10 +96,13 @@ class _ScoreState extends State<Score> {
                 decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                child: new Center(
-                  child: new Text(
+                child: Center(
+                  child: Text(
                     '${_qnController.score}/10',
-                    style: TextStyle(color: scoreColor(), fontSize: 50),
+                    style: TextStyle(
+                        color: scoreColor(),
+                        fontSize: 50,
+                        fontWeight: FontWeight.bold),
                     textAlign: TextAlign.center,
                   ),
                 )),
@@ -126,7 +129,7 @@ class _ScoreState extends State<Score> {
                 'Take New Quiz',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.white,
+                  color: Colors.black54,
                 ),
               ),
             ),
